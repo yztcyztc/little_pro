@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/result/result"
+  ],
+  "window":{
+    "backgroundTextStyle":"#F8F8F8",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "yztctest",
+    "navigationBarTextStyle":"black"
+  }
+}

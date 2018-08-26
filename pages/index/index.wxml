@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+  <form bindsubmit='formSubmit'>
+    <view class="weui-cells__title">选择您的学校</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">当前选择</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker  class="weui-cell__bd" bindchange="schoolPickerChange" value="{{index}}" range="{{schools}}">
+              <view class="weui-input">{{schools[index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    <view class="page-section">
+      <view class="weui-cells__title">gpa分数</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="gpa" class="weui-input" type="digit" placeholder="gpa分数"/>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">gre分数</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="gre" class="weui-input" type="digit" placeholder="gre分数"/>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">toefl分数</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="toefl" class="weui-input" type="digit" placeholder="toefl分数"/>
+        </view>
+      </view>
+    </view>
+    <button form-type='submit'>提交</button>
+    <button form-type='reset'>重置</button>
+  </form>
+  <!-- <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>

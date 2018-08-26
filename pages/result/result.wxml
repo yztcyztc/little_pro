@@ -1,0 +1,4 @@
+<!--result.wxml-->
+<view class="container">
+  <text>结果为：{{ result }}</text>
+</view>
