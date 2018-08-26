@@ -7,7 +7,13 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view> -->
-  <form bindsubmit='formSubmit'>
+  <form bindsubmit='formSubmit' >
+    <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">申请的学位</view>
+          <view class="weui-cell__ft">
+            <switch bindchange="changeDegree" color='grey'>{{ degrees[degree] }}</switch>
+          </view>
+        </view>
     <view class="weui-cells__title">选择您的学校</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
@@ -16,37 +22,78 @@
           </view>
           <view class="weui-cell__bd">
             <picker  class="weui-cell__bd" bindchange="schoolPickerChange" value="{{index}}" range="{{schools}}">
-              <view class="weui-input">{{schools[index]}}</view>
+              <view class="weui-input">{{schools[school_index]}}</view>
             </picker>
           </view>
         </view>
       </view>
-    <view class="page-section">
-      <view class="weui-cells__title">gpa分数</view>
+    <!-- <view class="page-section">
+      <view class="weui-cells__title">就读学校</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input name="gpa" class="weui-input" type="digit" placeholder="gpa分数"/>
+          <input name="school" class="weui-input"  placeholder="大学名称，如：北京大学"/>
+        </view>
+      </view>
+    </view> -->
+    <view class="page-section">
+      <view class="weui-cells__title">托福</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="toefl" class="weui-input" type="digit" placeholder="TOEFL分数"/>
         </view>
       </view>
     </view>
     <view class="page-section">
-      <view class="weui-cells__title">gre分数</view>
+      <view class="weui-cells__title">GPA分数{{gpas[gpa]}}
+          <radio-group bindchange = 'changeGpa' >
+            <radio checked='true'>百分制</radio>
+            <radio>四分制</radio>
+          </radio-group>
+      </view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input name="gre" class="weui-input" type="digit" placeholder="gre分数"/>
+          <input name="gpa" class="weui-input" type="digit" placeholder="GPA分数"/>
         </view>
       </view>
     </view>
     <view class="page-section">
-      <view class="weui-cells__title">toefl分数</view>
+      <view class="weui-cells__title">{{gres[gre]}}
+        <switch bindchange='changeGre' color="grey"></switch>
+      </view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input name="toefl" class="weui-input" type="digit" placeholder="toefl分数"/>
+          <input name="gre" class="weui-input" type="digit" placeholder="{{gres[gre]}}分数"/>
         </view>
       </view>
     </view>
-    <button form-type='submit'>提交</button>
-    <button form-type='reset'>重置</button>
+
+    <view class="page-section">
+      <view class="weui-cells__title">在读专业</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="professional" class="weui-input"  placeholder="专业"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="weui-cells__title">其他加分项（科研、实习，志愿者等）</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">选择匹配程度</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker  class="weui-cell__bd" bindchange="additionChange" value="{{add_index}}" range="{{additions}}">
+              <view class="weui-input">{{additions[add_index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <button form-type='submit'>开始速配</button>
+    <button form-type='reset'>重新填写</button>
   </form>
   <!-- <view class="usermotto">
     <text class="user-motto">{{motto}}</text>

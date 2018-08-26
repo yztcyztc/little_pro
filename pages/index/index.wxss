@@ -1,2 +1,7 @@
 /**index.wxss**/
 @import "../lib/index.wxss";
+
+.radio {
+  margin-right: 2rpx;
+  font-size: 12px;
+}

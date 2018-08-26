@@ -1,8 +1,9 @@
 {
   "pages":[
+  "pages/welcome/welcome",
     "pages/index/index",
-    "pages/logs/logs",
     "pages/result/result"
+  
   ],
   "window":{
     "backgroundTextStyle":"#F8F8F8",

@@ -1,0 +1,10 @@
+<view class='container'>
+  
+  <form bindsubmit='formSubmit'>
+    <image src='../../images/pic.jpg'></image>
+
+    <button class='' form-type='submit'>开始速配</button>
+
+  </form>
+  <view>精准、便捷、有效</view>
+</view>
